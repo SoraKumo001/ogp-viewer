@@ -1,0 +1,29 @@
+{
+  "extName": {
+    "message": "OGP Viewer & Simulator"
+  },
+  "extDesc": {
+    "message": "サイトのOGP設定を表示し、XやFacebookでの見え方をエミュレートする拡張機能"
+  },
+  "loadingData": {
+    "message": "OGPデータを取得中..."
+  },
+  "largeImage": {
+    "message": "大きい画像 (Large Image)"
+  },
+  "smallImage": {
+    "message": "小さい画像 (Summary)"
+  },
+  "fallbackTitle": {
+    "message": "タイトルを取得できませんでした"
+  },
+  "fallbackDesc": {
+    "message": "説明を取得できませんでした。"
+  },
+  "rawData": {
+    "message": "抽出されたメタデータ (Raw Data)"
+  },
+  "errorFetchFailed": {
+    "message": "データの取得に失敗しました。このページ（システムページや新しいタブ等）では実行できない可能性があります。"
+  }
+}

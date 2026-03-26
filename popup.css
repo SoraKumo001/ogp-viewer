@@ -1,0 +1,240 @@
+:root {
+    --bg-dark: #15202b;
+    --card-bg: #1e2732;
+    --text-primary: #ffffff;
+    --text-dim: #8899a6;
+    --border-color: #38444d;
+    --accent: #1da1f2;
+    --accent-hover: #1a91da;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    width: 500px;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-stack);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+h1 {
+    font-size: 1.25rem;
+    margin: 0 0 16px 0;
+    font-weight: 700;
+    background: linear-gradient(90deg, #1da1f2, #005a9c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Tabs */
+.tabs-container {
+    overflow-x: auto;
+    padding-bottom: 12px;
+}
+.tabs-container::-webkit-scrollbar {
+    height: 4px;
+}
+.tabs-container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+.tabs {
+    display: flex;
+    gap: 8px;
+    width: max-content;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.tab-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-btn.active {
+    background-color: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-dim);
+    display: none;
+}
+.loading.active {
+    display: block;
+}
+
+/* Previews Sections */
+.preview-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+.preview-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.ogp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #333;
+    display: block;
+}
+
+/* Toggle Switch */
+.controls {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+.toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+.toggle input {
+    display: none;
+}
+.slider {
+    position: relative;
+    width: 36px;
+    height: 20px;
+    background-color: var(--border-color);
+    border-radius: 20px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+.toggle input:checked + .slider {
+    background-color: var(--accent);
+}
+.toggle input:checked + .slider::before {
+    transform: translateX(16px);
+}
+
+/* Base Card Style */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+}
+
+/* --- X (Twitter) --- */
+.x-card.large .x-card-image-wrapper { height: 260px; border-bottom: 1px solid var(--border-color); }
+.x-card.large .x-card-content { padding: 12px; }
+.x-card.large .card-desc { display: none; }
+.x-card.small { display: flex; height: 130px; }
+.x-card.small .x-card-image-wrapper { width: 130px; height: 100%; flex-shrink: 0; border-right: 1px solid var(--border-color); }
+.x-card.small .x-card-content { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; overflow: hidden; }
+.x-card .card-title { margin: 0 0 4px 0; font-size: 0.95rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; }
+.x-card .card-desc { margin: 0; font-size: 0.85rem; color: var(--text-dim); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.x-card .site-domain { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 4px; text-transform: lowercase; }
+
+/* --- Facebook --- */
+.fb-card { border-radius: 0; border: 1px solid #ced0d4; background-color: #fff; color: #1c1e21; }
+.fb-card .fb-card-image-wrapper { height: 260px; }
+.fb-card .fb-card-content { padding: 10px 12px; background: #f2f3f5; border-top: 1px solid #dadde1; }
+.fb-card .site-domain { text-transform: uppercase; font-size: 0.75rem; color: #65676B; margin-bottom: 4px; }
+.fb-card .card-title { font-weight: 600; font-size: 1rem; color: #050505; margin: 0; }
+.fb-card .card-desc { color: #65676B; -webkit-line-clamp: 1; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.85rem; margin-top: 2px; }
+
+/* --- LINE --- */
+.line-bg { background-color: #000; padding: 20px; border-radius: 12px; }
+.line-bubble { background-color: #242528; border-radius: 20px; padding: 12px; max-width: 85%; }
+.line-card { display: flex; flex-direction: column; gap: 8px; }
+.line-image-wrapper { height: 160px; border-radius: 12px; overflow: hidden; }
+.line-content { display: flex; flex-direction: column; gap: 4px; }
+.line-title { font-size: 0.95rem; font-weight: bold; margin: 0; color: #fff; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-desc { font-size: 0.8rem; color: #a1a2a4; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.line-domain { font-size: 0.7rem; color: #a1a2a4; }
+
+/* --- Discord --- */
+.discord-bg { padding: 16px; background-color: #313338; border-radius: 8px; }
+.discord-embed { border-left: 4px solid #202225; background-color: #2b2d31; padding: 12px 16px; border-radius: 4px; max-width: 400px; display: flex; flex-direction: column; gap: 6px; }
+.discord-provider { font-size: 0.75rem; color: #dbdee1; font-weight: 500; }
+.discord-title { font-size: 1rem; color: #00A8FC; margin: 0; font-weight: 600; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; }
+.discord-desc { font-size: 0.85rem; color: #dbdee1; margin: 0 0 6px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.discord-image-wrapper { max-height: 250px; border-radius: 4px; overflow: hidden; }
+.discord-image-wrapper img { object-fit: contain; object-position: left; background: transparent; max-width: 100%; max-height: 250px; }
+
+/* --- Slack --- */
+.slack-bg { padding: 16px; background-color: #1a1d21; border-radius: 8px; }
+.slack-embed { border-left: 4px solid #dddddd; padding-left: 12px; display: flex; flex-direction: column; gap: 4px; max-width: 400px; margin-left: 10px; }
+.slack-provider-flex { display: flex; align-items: center; gap: 6px; }
+.slack-provider-icon { width: 14px; height: 14px; background-color: #cbd5e1; border-radius: 2px; }
+.slack-provider { font-size: 0.85rem; color: #ababad; font-weight: 600; }
+.slack-title { font-size: 0.95rem; color: #1d9bd1; margin: 2px 0; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slack-desc { font-size: 0.9rem; color: #d1d2d3; margin: 0 0 8px 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.slack-image-wrapper { max-height: 200px; border-radius: 8px; overflow: hidden; border: 1px solid #383a3d; }
+.slack-image-wrapper img { object-fit: cover; max-width: 100%; }
+
+/* --- LinkedIn --- */
+.linkedin-card { background-color: #f3f2ef; color: #000; border-radius: 8px; border: 1px solid #d1d1d1; }
+.linkedin-image-wrapper { height: 260px; }
+.linkedin-content { padding: 12px 16px; background: whitesmoke; }
+.linkedin-title { font-size: 1rem; font-weight: 600; margin: 0 0 4px 0; color: #000; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.linkedin-domain { font-size: 0.75rem; color: #666; }
+
+/* --- Hatena --- */
+.hatena-card { background-color: #fff; border: 1px solid #ccc; border-radius: 3px; display: flex; overflow: hidden; height: 120px; }
+.hatena-content { padding: 12px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+.hatena-title { font-size: 0.95rem; font-weight: bold; color: #006eb0; margin: 0 0 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hatena-desc { font-size: 0.75rem; color: #333; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.hatena-domain { font-size: 0.7rem; color: #999; margin-top: 4px; }
+.hatena-image-wrapper { width: 120px; flex-shrink: 0; border-left: 1px solid #eee; }
+
+/* --- iMessage --- */
+.imessage-bg { padding: 20px; background-color: #000; border-radius: 12px; }
+.imessage-bubble { background-color: #262628; border-radius: 20px; overflow: hidden; max-width: 75%; }
+.imessage-image-wrapper { height: 160px; }
+.imessage-content { padding: 12px 14px; }
+.imessage-domain { font-size: 0.75rem; color: #a1a1a6; text-transform: uppercase; margin-bottom: 2px; }
+.imessage-title { font-size: 0.9rem; font-weight: 500; color: #fff; margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+/* Raw data */
+.raw-data-section { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 16px; }
+details summary { cursor: pointer; font-size: 0.85rem; color: var(--text-dim); user-select: none; outline: none; }
+#raw-data-output { font-family: monospace; font-size: 0.75rem; background-color: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; color: #a5d6ff; white-space: pre-wrap; word-break: break-all; max-height: 200px; overflow-y: auto; }

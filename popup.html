@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>OGP Viewer</h1>
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab-btn active" data-target="x-preview">X</button>
+                    <button class="tab-btn" data-target="fb-preview">Facebook</button>
+                    <button class="tab-btn" data-target="line-preview">LINE</button>
+                    <button class="tab-btn" data-target="discord-preview">Discord</button>
+                    <button class="tab-btn" data-target="slack-preview">Slack</button>
+                    <button class="tab-btn" data-target="linkedin-preview">LinkedIn</button>
+                    <button class="tab-btn" data-target="hatena-preview">Hatena</button>
+                    <button class="tab-btn" data-target="imessage-preview">iMessage</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="loading" class="loading" data-i18n="loadingData">OGPデータを取得中...</div>
+
+            <!-- X Preview -->
+            <div id="x-preview" class="preview-section active">
+                <div class="controls">
+                    <label class="toggle">
+                        <input type="checkbox" id="x-card-size-toggle" checked>
+                        <span class="slider"></span>
+                        <span class="label-text" data-i18n="largeImage">大きい画像 (Large Image)</span>
+                    </label>
+                </div>
+                <div class="card x-card large">
+                    <div class="x-card-image-wrapper">
+                        <img src="" alt="Thumbnail" class="ogp-image" />
+                    </div>
+                    <div class="x-card-content">
+                        <div class="site-domain ogp-site-name">example.com</div>
+                        <h2 class="card-title ogp-title">タイトルを取得できませんでした</h2>
+                        <p class="card-desc ogp-desc">説明を取得できませんでした。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Facebook Preview -->
+            <div id="fb-preview" class="preview-section">
+                <div class="card fb-card">
+                    <div class="fb-card-image-wrapper">
+                        <img src="" alt="Thumbnail" class="ogp-image" />
+                    </div>
+                    <div class="fb-card-content">
+                        <div class="site-domain ogp-site-name">EXAMPLE.COM</div>
+                        <h2 class="card-title ogp-title">タイトルを取得できませんでした</h2>
+                        <p class="card-desc ogp-desc">説明を取得できませんでした。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINE Preview -->
+            <div id="line-preview" class="preview-section">
+                <div class="line-bg">
+                    <div class="line-bubble">
+                        <div class="line-card">
+                            <div class="line-image-wrapper">
+                                <img src="" alt="Thumbnail" class="ogp-image" />
+                            </div>
+                            <div class="line-content">
+                                <h2 class="line-title ogp-title">タイトルを取得できませんでした</h2>
+                                <p class="line-desc ogp-desc">説明を取得できませんでした。</p>
+                                <div class="line-domain ogp-site-name">example.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Discord Preview -->
+            <div id="discord-preview" class="preview-section">
+                <div class="discord-bg">
+                    <div class="discord-embed">
+                        <div class="discord-provider ogp-site-name">example.com</div>
+                        <h2 class="discord-title ogp-title">タイトルを取得できませんでした</h2>
+                        <p class="discord-desc ogp-desc">説明を取得できませんでした。</p>
+                        <div class="discord-image-wrapper">
+                            <img src="" alt="Thumbnail" class="ogp-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slack Preview -->
+            <div id="slack-preview" class="preview-section">
+                <div class="slack-bg">
+                    <div class="slack-embed">
+                        <div class="slack-provider-flex">
+                            <span class="slack-provider-icon"></span>
+                            <span class="slack-provider ogp-site-name">example.com</span>
+                        </div>
+                        <h2 class="slack-title ogp-title">タイトルを取得できませんでした</h2>
+                        <p class="slack-desc ogp-desc">説明を取得できませんでした。</p>
+                        <div class="slack-image-wrapper">
+                            <img src="" alt="Thumbnail" class="ogp-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LinkedIn Preview -->
+            <div id="linkedin-preview" class="preview-section">
+                <div class="card linkedin-card">
+                    <div class="linkedin-image-wrapper">
+                        <img src="" alt="Thumbnail" class="ogp-image" />
+                    </div>
+                    <div class="linkedin-content">
+                        <h2 class="linkedin-title ogp-title">タイトルを取得できませんでした</h2>
+                        <div class="linkedin-domain ogp-site-name">example.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hatena Preview -->
+            <div id="hatena-preview" class="preview-section">
+                <div class="hatena-card">
+                    <div class="hatena-content">
+                        <h2 class="hatena-title ogp-title">タイトルを取得できませんでした</h2>
+                        <p class="hatena-desc ogp-desc">説明を取得できませんでした。</p>
+                        <div class="hatena-domain ogp-site-name">example.com</div>
+                    </div>
+                    <div class="hatena-image-wrapper">
+                        <img src="" alt="Thumbnail" class="ogp-image" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- iMessage Preview -->
+            <div id="imessage-preview" class="preview-section">
+                <div class="imessage-bg">
+                    <div class="imessage-bubble">
+                        <div class="imessage-image-wrapper">
+                            <img src="" alt="Thumbnail" class="ogp-image" />
+                        </div>
+                        <div class="imessage-content">
+                            <div class="imessage-domain ogp-site-name">example.com</div>
+                            <h2 class="imessage-title ogp-title">タイトルを取得できませんでした</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="raw-data-section">
+                <details>
+                    <summary data-i18n="rawData">抽出されたメタデータ (Raw Data)</summary>
+                    <pre id="raw-data-output"></pre>
+                </details>
+            </div>
+        </main>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

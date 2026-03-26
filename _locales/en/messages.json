@@ -1,0 +1,29 @@
+{
+  "extName": {
+    "message": "OGP Viewer & Simulator"
+  },
+  "extDesc": {
+    "message": "A Chrome extension to extract OGP settings and simulate link previews for X, Facebook, and more."
+  },
+  "loadingData": {
+    "message": "Fetching OGP data..."
+  },
+  "largeImage": {
+    "message": "Large Image"
+  },
+  "smallImage": {
+    "message": "Small Image (Summary)"
+  },
+  "fallbackTitle": {
+    "message": "Title unavailable"
+  },
+  "fallbackDesc": {
+    "message": "Description unavailable."
+  },
+  "rawData": {
+    "message": "Extracted Metadata (Raw Data)"
+  },
+  "errorFetchFailed": {
+    "message": "Failed to fetch data. Note that this cannot be run on system pages (like chrome://) or new tabs."
+  }
+}
