@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, (results) => {
             if (chrome.runtime.lastError || !results || !results.length) {
-                console.error("Error communicating with content script:", chrome.runtime.lastError);
+                const errMsg = chrome.runtime.lastError ? chrome.runtime.lastError.message : "Unknown error";
+                console.error("Error communicating with content script:", errMsg);
                 document.getElementById('loading').textContent = chrome.i18n.getMessage("errorFetchFailed");
                 document.getElementById('loading').classList.add('active');
                 return;
