@@ -4,6 +4,11 @@
   "version": "1.0",
   "default_locale": "ja",
   "description": "__MSG_extDesc__",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
   "permissions": [
     "activeTab",
     "scripting"
